@@ -2,6 +2,10 @@ import type { TickerData } from "@/lib/validations";
 import { Schema, model } from "mongoose";
 
 const TickerSchema = new Schema<TickerData>({
+    platform: {
+        type: Schema.Types.String,
+        required: true,
+    },
     base_unit: {
         type: Schema.Types.String,
         required: true,

@@ -11,7 +11,12 @@ class TickerController {
                 process.env.WAZIRX_BASE_URL + "/tickers"
             );
 
-            const tickers = Object.values(data).slice(0, 10);
+            const tickers = Object.entries(data)
+                .slice(0, 10)
+                .map(([key, value]) => ({
+                    platform: key,
+                    ...value,
+                }));
 
             await db.tickers.deleteMany();
             await db.tickers.insertMany(tickers);
