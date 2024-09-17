@@ -24,7 +24,7 @@ export function Navbar() {
     return (
         <header className="flex items-center justify-between border-b p-4">
             <h1 className="text-3xl font-bold text-teal-600">HODLINFO</h1>
-            <div className="flex items-center space-x-4">
+            <div className="hidden items-center space-x-4 md:flex">
                 <Select defaultValue="INR">
                     <SelectTrigger className="w-[80px]">
                         <SelectValue placeholder="INR" />
@@ -46,7 +46,7 @@ export function Navbar() {
                 <Button variant="secondary">BUY BTC</Button>
             </div>
             <div className="flex items-center space-x-4">
-                <div className="flex size-10 items-center justify-center rounded-full border border-foreground">
+                <div className="hidden size-10 items-center justify-center rounded-full border border-foreground md:flex">
                     57
                 </div>
                 <Button className="bg-teal-600 hover:bg-teal-600/90 dark:hover:bg-teal-600/90">

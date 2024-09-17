@@ -31,36 +31,44 @@ export function HodlInfo() {
     });
 
     return (
-        <div className="grow p-12">
-            <h2 className="mb-4 text-center text-xl">Best Price to Trade</h2>
+        <div className="grow space-y-12 p-12">
+            <div className="space-y-4 md:space-y-8">
+                <div className="flex flex-col items-center gap-6 md:flex-row md:justify-around md:gap-10">
+                    {[
+                        { label: "5 Mins", value: "0.1%" },
+                        { label: "1 Hour", value: "0.96%" },
+                    ].map((item, index) => (
+                        <div key={index} className="text-center">
+                            <div className="text-4xl font-bold">
+                                {item.value}
+                            </div>
+                            <div>{item.label}</div>
+                        </div>
+                    ))}
 
-            <div className="mb-8 flex items-center justify-around gap-10">
-                {[
-                    { label: "5 Mins", value: "0.1%" },
-                    { label: "1 Hour", value: "0.96%" },
-                ].map((item, index) => (
-                    <div key={index} className="text-center">
-                        <div className="text-4xl font-bold">{item.value}</div>
-                        <div>{item.label}</div>
+                    <div className="space-y-2 text-center md:space-y-8">
+                        <h2 className="text-xl">Best Price to Trade</h2>
+                        <div className="text-5xl font-bold md:text-7xl">
+                            ₹ 26,56,110
+                        </div>
+                        <p className="text-balance text-muted-foreground">
+                            Average BTC/INR net price including commission
+                        </p>
                     </div>
-                ))}
 
-                <div className="text-7xl font-bold">₹ 26,56,110</div>
-
-                {[
-                    { label: "1 Day", value: "2.73%" },
-                    { label: "7 Days", value: "7.51%" },
-                ].map((item, index) => (
-                    <div key={index} className="text-center">
-                        <div className="text-4xl font-bold">{item.value}</div>
-                        <div>{item.label}</div>
-                    </div>
-                ))}
+                    {[
+                        { label: "1 Day", value: "2.73%" },
+                        { label: "7 Days", value: "7.51%" },
+                    ].map((item, index) => (
+                        <div key={index} className="text-center">
+                            <div className="text-4xl font-bold">
+                                {item.value}
+                            </div>
+                            <div>{item.label}</div>
+                        </div>
+                    ))}
+                </div>
             </div>
-
-            <p className="mb-12 text-center text-muted-foreground">
-                Average BTC/INR net price including commission
-            </p>
 
             <Table>
                 <TableHeader>
